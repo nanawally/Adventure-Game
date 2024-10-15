@@ -1,4 +1,6 @@
 package se.anna.adventure;
 
-public class Directions {
+public interface Directions {
+    void surroundings();
+    void menu();
 }

@@ -4,27 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3263751f-4a99-4c48-ad27-25886d7c2511" name="Changes" comment="" />
+    <list default="true" id="3263751f-4a99-4c48-ad27-25886d7c2511" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/CentreMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Directions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/East.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/MapDirections.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/North.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/South.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/West.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
   <component name="ProjectId" id="2nSw8ZhxhyTEgYWDURuiTNvYPR5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Administratör/Documents/JavaProjects/Java B/Adventure-Game/src/main/java/se/anna/adventure/Main.java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -44,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1728979627080</updated>
-      <workItem from="1728979628108" duration="1000" />
+      <workItem from="1728979628108" duration="13493000" />
     </task>
     <servers />
   </component>
