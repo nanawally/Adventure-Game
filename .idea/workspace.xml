@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3263751f-4a99-4c48-ad27-25886d7c2511" name="Changes" comment="intial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/CentreMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/CentreMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/North.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/North.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +80,7 @@
       <updated>1728979627080</updated>
       <workItem from="1728979628108" duration="13493000" />
       <workItem from="1729030431158" duration="782000" />
-      <workItem from="1729094684529" duration="5524000" />
+      <workItem from="1729094684529" duration="7079000" />
     </task>
     <task id="LOCAL−00001" summary="intial commit">
       <option name="closed" value="true" />
@@ -98,7 +96,14 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1729149179192</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="intial commit">
+      <option name="closed" value="true" />
+      <created>1729152407118</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1729152407118</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
