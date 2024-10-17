@@ -16,7 +16,7 @@ public class East implements Directions {
     }
 
     @Override
-    public void menu() {
+    public void menu() throws InterruptedException {
         boolean running = true;
         while (running) {
             System.out.println("\nWhat do you want to do?\n1. Look around\n2. Examine the tree stump" +
@@ -30,7 +30,12 @@ public class East implements Directions {
                 case "examine the tree stump" -> System.out.println("\nYou approach the tree stump, and gently " +
                         "knock on it.\nNothing happens.");
                 case "go back west" -> {
-                    System.out.println("\nGoing back west...");
+                    System.out.print("\nGoing back west");
+                    for (int i = 0; i<3;i++){
+                        Thread.sleep(1000);
+                        System.out.print(".");
+                    }
+                    System.out.println("");
                     running = false;
                 }
                 default -> System.out.println("\nInvalid input");

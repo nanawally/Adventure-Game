@@ -16,8 +16,9 @@ public class West implements Directions {
     }
 
     @Override
-    public void menu() {
+    public void menu() throws InterruptedException {
         boolean running = true;
+        boolean shouldSpeak = false;
         while (running) {
             System.out.println("\nWhat do you want to do?\n1. Look around\n2. Speak to the creature\n3. Go back east");
             String userInput = scanner.nextLine().toLowerCase();
@@ -29,16 +30,24 @@ public class West implements Directions {
                 case "speak to the creature" -> {
                     System.out.println("\nYou approach the approach the creature " +
                             "and open your mouth to speak.");
+                    shouldSpeak = true;
                     running = false;
                 }
                 case "go back east" -> {
-                    System.out.println("\nGoing back east...");
+                    System.out.print("\nGoing back east");
+                    for (int i = 0; i<3;i++){
+                        Thread.sleep(1000);
+                        System.out.print(".");
+                    }
+                    System.out.println("");
                     running = false;
                 }
                 default -> System.out.println("\nInvalid input");
             }
         }
-        speak();
+        if (shouldSpeak){
+            speak();
+        }
     }
 
     public void speak() {

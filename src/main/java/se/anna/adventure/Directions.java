@@ -2,5 +2,5 @@ package se.anna.adventure;
 
 public interface Directions {
     void surroundings();
-    void menu();
+    void menu() throws InterruptedException;
 }

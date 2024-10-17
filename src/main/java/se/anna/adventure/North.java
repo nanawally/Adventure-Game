@@ -16,7 +16,7 @@ public class North implements Directions {
     }
 
     @Override
-    public void menu() {
+    public void menu() throws InterruptedException {
         boolean running = true;
         while (running) {
             System.out.println("\nWhat do you want to do?\n1. Look around\n2. Look into the jar\n3. Go back south");
@@ -27,11 +27,26 @@ public class North implements Directions {
                         "down mercilessly. There is nothing growing here.");
                 case "look into the jar" -> System.out.println("\nYou look into the jar. It contains only sand.");
                 case "go back south" -> {
-                    System.out.println("\nGoing back south...");
+                    System.out.print("\nGoing back south");
+                    for (int i = 0; i<3;i++){
+                        Thread.sleep(1000);
+                        System.out.print(".");
+                    }
+                    System.out.println("");
                     running = false;
                 }
                 default -> System.out.println("\nInvalid input");
             }
         }
+        lookIntoJar();
+    }
+
+    public void lookIntoJar(){
+        //method to look into the jar
+        //probably a switch to leave it alone vs look closer?
+    }
+
+    public void takeMedallion(){
+        //method to reach into the jar and take the medallion
     }
 }

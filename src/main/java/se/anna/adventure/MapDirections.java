@@ -29,6 +29,7 @@ public class MapDirections {
                         Thread.sleep(1000);
                         System.out.print(".");
                     }
+                    System.out.println("");
                     north.surroundings();
                     north.menu();
                 }
@@ -38,6 +39,7 @@ public class MapDirections {
                         Thread.sleep(1000);
                         System.out.print(".");
                     }
+                    System.out.println("");
                     south.surroundings();
                     south.menu();
                 }
@@ -47,6 +49,7 @@ public class MapDirections {
                         Thread.sleep(1000);
                         System.out.print(".");
                     }
+                    System.out.println("");
                     east.surroundings();
                     east.menu();
                 }
@@ -56,6 +59,7 @@ public class MapDirections {
                         Thread.sleep(1000);
                         System.out.print(".");
                     }
+                    System.out.println("");
                     west.surroundings();
                     west.menu();
                 }
