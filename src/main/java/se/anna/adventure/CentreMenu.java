@@ -17,7 +17,7 @@ public class CentreMenu {
                 "\nStaring down at you is a signpost; it only has arrows pointing north, south, east, and west.");
     }
 
-    public String centreMenu(){
+    public String showMenuTakeUserInput(){
         System.out.println("\nYou are at a crossroads. Which direction will you go?\n1. Go north" +
                 "\n2. Go south\n3. Go east\n4. Go west\n5. Quit game");
         String userInput = scanner.nextLine().toLowerCase();
