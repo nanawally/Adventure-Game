@@ -3,7 +3,7 @@ package se.anna.adventure;
 import java.util.Scanner;
 
 public class North implements Directions {
-    private Scanner scanner;
+    private final Scanner scanner;
     private boolean medallionTaken;
 
     public North(Scanner scanner) {
@@ -22,7 +22,7 @@ public class North implements Directions {
         boolean running = true;
         while (running) {
             System.out.println("\nWhat do you want to do?\n1. Look around\n2. Look into the jar\n3. Go back south");
-            String userInput = scanner.nextLine().toLowerCase();
+            String userInput = scanner.nextLine().toLowerCase().trim();
 
             switch (userInput) {
                 case "look around" -> System.out.println("\nThe desert completely surrounds you. The sun beats " +
@@ -37,7 +37,7 @@ public class North implements Directions {
                         Thread.sleep(1000);
                         System.out.print(".");
                     }
-                    System.out.println("");
+                    System.out.println();
                     running = false;
                 }
                 default -> System.out.println("\nInvalid input");
@@ -49,7 +49,7 @@ public class North implements Directions {
         boolean running = true;
         while (running) {
             System.out.println("\nWhat are you thinking?\n1. What a shame\n2. There must be something in here");
-            String userInput = scanner.nextLine().toLowerCase();
+            String userInput = scanner.nextLine().toLowerCase().trim();
 
             switch (userInput) {
                 case "what a shame" -> {
@@ -59,9 +59,12 @@ public class North implements Directions {
                 }
                 case "there must be something in here" -> {
                     if(!medallionTaken){
-                        System.out.println("\nYou thought you saw something glimmer. " +
-                                "Is it a trick of the eye?\nRegardless, you ignore the odd feeling in your stomache and " +
-                                "reach down into the jar.");
+                        System.out.println("""
+                                
+                                You thought you saw something glimmer. \
+                                Is it a trick of the eye?
+                                Regardless, you ignore the odd feeling in your stomache and \
+                                reach down into the jar.""");
                         takeMedallion();
                         medallionTaken = true;
                     } else {
@@ -76,7 +79,10 @@ public class North implements Directions {
     }
 
     public void takeMedallion() {
-        System.out.println("\nYou hand closes round something small and flat. As you pull it out, you " +
-                "see it is a medallion.\nIt is practically grey with rust and dirt.");
+        System.out.println("""
+                
+                You hand closes round something small and flat. As you pull it out, you \
+                see it is a medallion.
+                It is practically grey with rust and dirt.""");
     }
 }

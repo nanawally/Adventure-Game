@@ -3,11 +3,11 @@ package se.anna.adventure;
 import java.util.Scanner;
 
 public class MapDirections {
-    private Directions north;
-    private Directions south;
-    private Directions east;
-    private Directions west;
-    private Scanner scanner;
+    private final Directions north;
+    private final Directions south;
+    private final Directions east;
+    private final Directions west;
+    private final Scanner scanner;
 
     public MapDirections(Scanner scanner) {
         this.scanner = scanner;
@@ -18,26 +18,22 @@ public class MapDirections {
     }
 
     public void chooseDirection() throws InterruptedException {
-        CentreMenu centreMenu = new CentreMenu();
+        CentreMenu centreMenu = new CentreMenu(scanner);
         boolean running = true;
 
         while (running) {
             switch (centreMenu.showMenuTakeUserInput()) {
-                case "go north" -> {
-                    directionGo("north", north);
-                }
-                case "go south" -> {
-                    directionGo("south",south);
-                }
-                case "go east" -> {
-                    directionGo("east", east);
-                }
-                case "go west" -> {
-                    directionGo("west", west);
-                }
+                case "go north" -> directionGo("north", north);
+
+                case "go south" -> directionGo("south", south);
+
+                case "go east" -> directionGo("east", east);
+
+                case "go west" -> directionGo("west", west);
+
                 case "quit game" -> {
                     System.out.print("\nQuitting game");
-                    for (int i = 0; i<3; i++){
+                    for (int i = 0; i < 3; i++) {
                         Thread.sleep(1000);
                         System.out.print(".");
                     }
@@ -49,12 +45,12 @@ public class MapDirections {
     }
 
     public void directionGo(String directionName, Directions name) throws InterruptedException {
-        System.out.print("\nGoing "+directionName);
-        for (int i = 0; i<3; i++){
+        System.out.print("\nGoing " + directionName);
+        for (int i = 0; i < 3; i++) {
             Thread.sleep(1000);
             System.out.print(".");
         }
-        System.out.println("");
+        System.out.println();
         name.surroundings();
         name.menu();
     }

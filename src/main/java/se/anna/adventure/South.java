@@ -3,7 +3,7 @@ package se.anna.adventure;
 import java.util.Scanner;
 
 public class South implements Directions {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public South(Scanner scanner) {
         this.scanner = scanner;
@@ -11,8 +11,11 @@ public class South implements Directions {
 
     @Override
     public void surroundings() {
-        System.out.println("\nYou go to the south. The sight of a brilliant cerulean ocean fills your eyes, " +
-                "and the sun glimmers on the surface of the waves.\nYou see a flag in a tidal pool.");
+        System.out.println("""
+                
+                You go to the south. The sight of a brilliant cerulean ocean fills your eyes, \
+                and the sun glimmers on the surface of the waves.
+                You see a flag in a tidal pool.""");
     }
 
     @Override
@@ -20,7 +23,7 @@ public class South implements Directions {
         boolean running = true;
         while (running) {
             System.out.println("\nWhat do you want to do?\n1. Look around\n2. Examine the flag\n3. Go back north");
-            String userInput = scanner.nextLine().toLowerCase();
+            String userInput = scanner.nextLine().toLowerCase().trim();
 
             switch (userInput) {
                 case "look around" -> System.out.println("\nThere is nothing man-made on the beach except for the " +
@@ -33,7 +36,7 @@ public class South implements Directions {
                         Thread.sleep(1000);
                         System.out.print(".");
                     }
-                    System.out.println("");
+                    System.out.println();
                     running = false;
                 }
                 default -> System.out.println("\nInvalid input");
