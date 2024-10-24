@@ -1,12 +1,23 @@
 package se.anna.adventure;
 
+import se.anna.adventurefight.*;
+
 import java.util.Scanner;
+
 
 public class West implements Directions {
     private final Scanner scanner;
+    private Tasks task;
+    private Player player;
+    private FightMechanics fightMechanics;
+    private boolean haveFought;
 
-    public West(Scanner scanner) {
+    public West(Scanner scanner, Tasks task, Player player, FightMechanics fightMechanics) {
         this.scanner = scanner;
+        this.task = task;
+        this.player = player;
+        this.fightMechanics = fightMechanics;
+        this.haveFought = false;
     }
 
     @Override
@@ -58,29 +69,33 @@ public class West implements Directions {
         System.out.println("'What do you want?' the creature snarls.");
         String userInput;
 
-        do {
-            System.out.println("""
-                    
-                    How do you respond?
-                    
-                    1. I am searching for something
-                    2. How dare you! Die!""");
-            userInput = scanner.nextLine().toLowerCase().trim();
+        if (!task.isNorthCompleted()) {
+            do {
+                System.out.println("""
+                        
+                        How do you respond?
+                        
+                        1. I am searching for something
+                        2. How dare you! Die!""");
+                userInput = scanner.nextLine().toLowerCase().trim();
 
-            if (userInput.equals("i am searching for something")) {
-                diplomacy();
-                break;
-            } else if (userInput.equals("how dare you! die!")) {
-                fight();
-                break;
-            } else {
-                System.out.println("Invalid input");
+                if (userInput.equals("i am searching for something")) {
+                    diplomacy();
+                    break;
+                } else if (userInput.equals("how dare you! die!")) {
+                    firstFight();
+                    break;
+                } else {
+                    System.out.println("Invalid input");
+                }
             }
+            while (true);
+        } else {
+            secondFight();
         }
-        while (true);
     }
 
-    public void diplomacy() {
+    void diplomacy() {
         System.out.println("""
                 
                 The creature croaks. Is it... laughing?
@@ -89,7 +104,7 @@ public class West implements Directions {
         System.out.println("Your vision goes dark. You wake up on the ground.");
     }
 
-    public void fight() {
+    void firstFight() {
         System.out.println("""
                 
                 You leap at the creature. In the blink of an eye it has moved out of your way, \
@@ -97,5 +112,27 @@ public class West implements Directions {
                 As you hit your head hard on the ground, you swear you can hear a croaking \
                 laugh becoming fainter...""");
         System.out.println("Your vision goes dark. You wake up on the ground.");
+    }
+
+    private void secondFight() {
+        System.out.println("\nSuddenly, the creature's eyes widen as it spots the rusty medallion in your hand." +
+                "\nBefore you can think, it has launched itself at you.");
+        Dice dice = new Dice();
+        Enemy lakeCreature = new Enemy("The Lake Creature", 40, dice.D6());
+        fightMechanics.fightRound(lakeCreature, player);
+        if (player.getHealth() > lakeCreature.getHealth() && lakeCreature.isAlive()) {
+            System.out.println("You have chosen to leave the fight and go back east.");
+        } else if (player.getHealth() < lakeCreature.getHealth() && lakeCreature.isAlive()) {
+            System.out.println("You have fled the fight and gone back east.");
+        }
+        if (!lakeCreature.isAlive()) {
+            completeTask();
+        }
+    }
+
+    @Override
+    public void completeTask() {
+        task.setWestCompleted(true);
+        haveFought = true;
     }
 }

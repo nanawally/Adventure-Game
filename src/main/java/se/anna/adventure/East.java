@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class East implements Directions {
     private final Scanner scanner;
+    private Tasks task;
 
-    public East(Scanner scanner) {
+    public East(Scanner scanner, Tasks task) {
         this.scanner = scanner;
+        this.task = task;
     }
 
     @Override
@@ -55,5 +57,11 @@ public class East implements Directions {
                 default -> System.out.println("\nInvalid input");
             }
         }
+    }
+
+    @Override
+    public void completeTask() {
+        task.setEastCompleted(true);
+        // boolean personal to the class = true;
     }
 }

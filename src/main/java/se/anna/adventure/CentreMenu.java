@@ -25,6 +25,7 @@ public class CentreMenu {
     }
 
     public String showMenuTakeUserInput(){
+        // PUT AN IF STATEMENT TO CHECK IF ALL TASKS ARE COMPLETE
         System.out.println("""
                 
                 You are at a crossroads. Which direction will you go?
@@ -34,5 +35,9 @@ public class CentreMenu {
                 4. Go west
                 5. Quit game""");
         return scanner.nextLine().toLowerCase().trim();
+    }
+
+    public void closeScanner(){
+        scanner.close();
     }
 }

@@ -1,15 +1,18 @@
 package se.anna.adventure;
 
+import se.anna.adventurefight.Player;
+
 import java.util.Scanner;
 
 public class Game {
     private final Scanner scanner = new Scanner(System.in);
+    private static Player player;
 
     public void start() throws InterruptedException {
         CentreMenu menu = new CentreMenu(scanner);
         menu.welcome();
         menu.introduction();
-        MapDirections map = new MapDirections(scanner);
+        MapDirections map = new MapDirections(scanner, menu);
         map.chooseDirection();
     }
 }

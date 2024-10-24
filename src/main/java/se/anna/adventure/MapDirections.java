@@ -1,24 +1,32 @@
 package se.anna.adventure;
 
+import se.anna.adventurefight.FightMechanics;
+import se.anna.adventurefight.Player;
+
 import java.util.Scanner;
 
 public class MapDirections {
+    private final Tasks tasks;
+    private Player player;
+    private FightMechanics fightMechanics;
     private final Directions north;
     private final Directions south;
     private final Directions east;
     private final Directions west;
-    private final Scanner scanner;
+    private final CentreMenu centreMenu;
 
-    public MapDirections(Scanner scanner) {
-        this.scanner = scanner;
-        this.north = new North(scanner);
-        this.south = new South(scanner);
-        this.east = new East(scanner);
-        this.west = new West(scanner);
+    public MapDirections(Scanner scanner, CentreMenu centreMenu) {
+        this.tasks = new Tasks();
+        this.player = new Player("The player (you)", 50, 12);
+        this.fightMechanics = new FightMechanics();
+        this.north = new North(scanner, this.tasks);
+        this.south = new South(scanner, this.tasks);
+        this.east = new East(scanner, this.tasks);
+        this.west = new West(scanner, this.tasks, this.player, this.fightMechanics);
+        this.centreMenu = centreMenu;
     }
 
     public void chooseDirection() throws InterruptedException {
-        CentreMenu centreMenu = new CentreMenu(scanner);
         boolean running = true;
 
         while (running) {
@@ -37,6 +45,7 @@ public class MapDirections {
                         Thread.sleep(1000);
                         System.out.print(".");
                     }
+                    centreMenu.closeScanner();
                     running = false;
                 }
                 default -> System.out.println("\nInvalid input");
@@ -53,5 +62,6 @@ public class MapDirections {
         System.out.println();
         name.surroundings();
         name.menu();
+        // can have an if statement like if (name.taskCompleted){}
     }
 }

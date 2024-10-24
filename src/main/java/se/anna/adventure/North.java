@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class North implements Directions {
     private final Scanner scanner;
+    private Tasks task;
     private boolean medallionTaken;
 
-    public North(Scanner scanner) {
+    public North(Scanner scanner, Tasks task) {
         this.scanner = scanner;
+        this.task = task;
         this.medallionTaken = false;
     }
 
@@ -66,7 +68,7 @@ public class North implements Directions {
                                 Regardless, you ignore the odd feeling in your stomache and \
                                 reach down into the jar.""");
                         takeMedallion();
-                        medallionTaken = true;
+                        completeTask();
                     } else {
                         System.out.println("\nYou have already pulled out the medallion. There is now only " +
                                 "sand in the jar.");
@@ -84,5 +86,11 @@ public class North implements Directions {
                 You hand closes round something small and flat. As you pull it out, you \
                 see it is a medallion.
                 It is practically grey with rust and dirt.""");
+    }
+
+    @Override
+    public void completeTask() {
+        task.setNorthCompleted(true);
+        medallionTaken = true;
     }
 }
