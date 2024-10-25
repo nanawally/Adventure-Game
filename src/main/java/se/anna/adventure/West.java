@@ -117,8 +117,7 @@ public class West implements Directions {
     private void secondFight() {
         System.out.println("\nSuddenly, the creature's eyes widen as it spots the rusty medallion in your hand." +
                 "\nBefore you can think, it has launched itself at you.");
-        Dice dice = new Dice();
-        Enemy lakeCreature = new Enemy("The Lake Creature", 40, dice.D6());
+        Enemy lakeCreature = new Enemy("The Lake Creature", 40, 10);
         fightMechanics.fightRound(lakeCreature, player);
         if (player.getHealth() > lakeCreature.getHealth() && lakeCreature.isAlive()) {
             System.out.println("You have chosen to leave the fight and go back east.");

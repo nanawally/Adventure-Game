@@ -50,7 +50,7 @@ public class North implements Directions {
     public void lookIntoJar() {
         boolean running = true;
         while (running) {
-            System.out.println("\nWhat are you thinking?\n1. What a shame\n2. There must be something in here");
+            System.out.println("\nWhat are you thinking?\n1. What a shame\n2. Look again");
             String userInput = scanner.nextLine().toLowerCase().trim();
 
             switch (userInput) {
@@ -59,7 +59,7 @@ public class North implements Directions {
                             "hand out of the jar.");
                     running = false;
                 }
-                case "there must be something in here" -> {
+                case "look again" -> {
                     if(!medallionTaken){
                         System.out.println("""
                                 

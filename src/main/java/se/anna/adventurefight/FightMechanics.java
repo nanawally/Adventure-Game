@@ -8,6 +8,11 @@ public class FightMechanics {
 
     public void fightRound(Creature attacker, Creature defender) {
         while (running && attacker.isAlive() && defender.isAlive()) {
+            Dice dice = new Dice();
+
+            attacker.setDamage(dice.D6());  // SEE IF YOU CAN SET DAMAGE IN METHOD PARAMETERS
+            defender.setDamage(dice.D8());
+
             executeAttack(attacker, defender);
             if (defender.isAlive()) {
                 executeAttack(defender, attacker);
