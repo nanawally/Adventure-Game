@@ -1,18 +1,18 @@
 package se.anna.adventurefight;
 
 import java.util.Scanner;
+import java.util.function.Supplier;
 
 public class FightMechanics {
     static Scanner scanner = new Scanner(System.in);
     private static boolean running = true;
 
-    public void fightRound(Creature attacker, Creature defender) {
+    public void fightRound(Creature attacker, Supplier<Integer>attackerDice, Creature defender, Supplier<Integer>defenderDice) {
         while (running && attacker.isAlive() && defender.isAlive()) {
-            Dice dice = new Dice();
-
-            attacker.setDamage(dice.D6());  // SEE IF YOU CAN SET DAMAGE IN METHOD PARAMETERS
-            defender.setDamage(dice.D8());
-
+            int attackerDamage = attackerDice.get();
+            int defenderDamage = defenderDice.get();
+            attacker.setDamage(attackerDamage);
+            defender.setDamage(defenderDamage);
             executeAttack(attacker, defender);
             if (defender.isAlive()) {
                 executeAttack(defender, attacker);
@@ -35,11 +35,11 @@ public class FightMechanics {
 
     static void executeAttack(Creature attacker, Creature defender) {
         attacker.attack(defender);
-        System.out.println("\n"+attacker.getName() + " has attacked " + defender.getName());
+        System.out.println("\n" + attacker.getName() + " has attacked " + defender.getName()+".");
         if (defender.isAlive()) {
-            System.out.println("\n"+defender.getName() + " has " + defender.getHealth() + " hit points remaining.");
+            System.out.println("\n" + defender.getName() + " has " + defender.getHealth() + " hit points remaining.");
         } else {
-            System.out.println("\n"+defender.getName() + " has been killed.");
+            System.out.println("\n" + defender.getName() + " has been killed.");
         }
     }
 }

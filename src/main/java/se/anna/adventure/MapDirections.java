@@ -17,11 +17,11 @@ public class MapDirections {
 
     public MapDirections(Scanner scanner, CentreMenu centreMenu) {
         this.tasks = new Tasks();
-        this.player = new Player("The player (you)", 50, 12);
+        this.player = new Player("The player (you)", 40, 0);
         this.fightMechanics = new FightMechanics();
         this.north = new North(scanner, this.tasks);
         this.south = new South(scanner, this.tasks);
-        this.east = new East(scanner, this.tasks);
+        this.east = new East(scanner, this.tasks, this.player, this.fightMechanics);
         this.west = new West(scanner, this.tasks, this.player, this.fightMechanics);
         this.centreMenu = centreMenu;
     }
@@ -40,7 +40,7 @@ public class MapDirections {
                 case "go west" -> directionGo("west", west);
 
                 case "quit game" -> {
-                    System.out.print("\nQuitting game");
+                    System.out.print("\nThank you for playing!\nQuitting game");
                     for (int i = 0; i < 3; i++) {
                         Thread.sleep(1000);
                         System.out.print(".");
@@ -62,6 +62,5 @@ public class MapDirections {
         System.out.println();
         name.surroundings();
         name.menu();
-        // can have an if statement like if (name.taskCompleted){}
     }
 }

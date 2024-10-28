@@ -6,11 +6,13 @@ public class North implements Directions {
     private final Scanner scanner;
     private Tasks task;
     private boolean medallionTaken;
+    private boolean firstLook;
 
     public North(Scanner scanner, Tasks task) {
         this.scanner = scanner;
         this.task = task;
         this.medallionTaken = false;
+        this.firstLook = false;
     }
 
     @Override
@@ -30,8 +32,13 @@ public class North implements Directions {
                 case "look around" -> System.out.println("\nThe desert completely surrounds you. The sun beats " +
                         "down mercilessly. There is nothing growing here.");
                 case "look into the jar" -> {
-                    System.out.println("\nYou look into the jar. You see only sand.");
-                    lookIntoJar();
+                    if (!firstLook) {
+                        System.out.println("\nYou look into the jar. You see only sand.");
+                        firstLook = true;
+                    } else {
+                        System.out.println("\nYou look into the jar. You see only sand.");
+                        lookIntoJar();
+                    }
                 }
                 case "go back south" -> {
                     System.out.print("\nGoing back south");
@@ -60,7 +67,7 @@ public class North implements Directions {
                     running = false;
                 }
                 case "look again" -> {
-                    if(!medallionTaken){
+                    if (!medallionTaken) {
                         System.out.println("""
                                 
                                 You thought you saw something glimmer. \

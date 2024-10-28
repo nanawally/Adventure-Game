@@ -21,4 +21,10 @@ public class Dice {
         int roll = random.nextInt(8) + 1;
         return roll;
     }
+
+    public int D12() {
+        Random random = new Random();
+        int roll = random.nextInt(12) + 1;
+        return roll;
+    }
 }
