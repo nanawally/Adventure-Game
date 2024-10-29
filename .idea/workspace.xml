@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3263751f-4a99-4c48-ad27-25886d7c2511" name="Changes" comment="initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/CentreMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/CentreMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/East.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/East.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/MapDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/MapDirections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/North.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/North.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/South.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/South.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventure/West.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventure/West.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventurefight/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventurefight/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/anna/adventurefight/FightMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/anna/adventurefight/FightMechanics.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +72,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -96,6 +96,9 @@
       <workItem from="1729878973613" duration="310000" />
       <workItem from="1729879301623" duration="1244000" />
       <workItem from="1730101758656" duration="14613000" />
+      <workItem from="1730124421937" duration="2105000" />
+      <workItem from="1730188329571" duration="2680000" />
+      <workItem from="1730192540549" duration="7499000" />
     </task>
     <task id="LOCAL−00001" summary="intial commit">
       <option name="closed" value="true" />

@@ -28,27 +28,32 @@ public class MapDirections {
 
     public void chooseDirection() throws InterruptedException {
         boolean running = true;
-
         while (running) {
-            switch (centreMenu.showMenuTakeUserInput()) {
-                case "go north" -> directionGo("north", north);
+            if (tasks.isNorthCompleted() && tasks.isSouthCompleted() && tasks.isEastCompleted() && tasks.isWestCompleted()) {
+                centreMenu.allTasksCompleteMenu();
+                centreMenu.closeScanner();
+                running = false;
+            } else {
+                switch (centreMenu.showMenuTakeUserInput()) {
+                    case "go north" -> directionGo("north", north);
 
-                case "go south" -> directionGo("south", south);
+                    case "go south" -> directionGo("south", south);
 
-                case "go east" -> directionGo("east", east);
+                    case "go east" -> directionGo("east", east);
 
-                case "go west" -> directionGo("west", west);
+                    case "go west" -> directionGo("west", west);
 
-                case "quit game" -> {
-                    System.out.print("\nThank you for playing!\nQuitting game");
-                    for (int i = 0; i < 3; i++) {
-                        Thread.sleep(1000);
-                        System.out.print(".");
+                    case "quit game" -> {
+                        System.out.print("\nThank you for playing!\nQuitting game");
+                        for (int i = 0; i < 3; i++) {
+                            Thread.sleep(1000);
+                            System.out.print(".");
+                        }
+                        centreMenu.closeScanner();
+                        running = false;
                     }
-                    centreMenu.closeScanner();
-                    running = false;
+                    default -> System.out.println("\nInvalid input");
                 }
-                default -> System.out.println("\nInvalid input");
             }
         }
     }

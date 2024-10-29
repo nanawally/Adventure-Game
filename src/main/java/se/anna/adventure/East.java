@@ -44,12 +44,18 @@ public class East implements Directions {
             String userInput = scanner.nextLine().toLowerCase().trim();
 
             switch (userInput) {
-                case "look around" -> System.out.println("""
-                        
-                        The forest is immensely beautiful, but as you \
-                        look closer at the trees, you notice the leaves are not rustling in the wind.
-                        In fact, \
-                        there is neither wind nor sound in this clearing.""");
+                case "look around" -> {
+                    if (task.isEastCompleted()) {
+                        System.out.println("\nThe forest is immensely beautiful. You hear a rustling around you, and as " +
+                                "you look around, you notice the leaves are shaking in the wind.");
+                    } else {
+                        System.out.println("""
+                                
+                                The forest is immensely beautiful, but as you \
+                                look closer at the trees, you notice the leaves are not rustling in the wind.
+                                In fact, there is neither wind nor sound in this clearing.""");
+                    }
+                }
                 case "examine the tree stump" -> {
                     if (task.isSouthCompleted() && !task.isEastCompleted()) {
                         System.out.println("""
@@ -106,7 +112,6 @@ public class East implements Directions {
                 case "attempt to speak to the wind spirit" -> {
                     speakToWindSpirit();
                     haveSpoken = true;
-                    //running = false;
                 }
                 case "attempt to flee back west" -> {
                     System.out.println("\nYou try to turn around to flee. " +

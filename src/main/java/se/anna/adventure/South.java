@@ -109,7 +109,7 @@ public class South implements Directions {
                                 
                                 You move the flag around in the hands, examining every thread. It appears to be a \
                                 completely normal flag.
-                                As you put it back on the ground, you look at your hands and see they have fresh \
+                                As you put it back on the ground, you notice your hands have fresh \
                                 blood on them.""");
                         completeTask();
                     } else {

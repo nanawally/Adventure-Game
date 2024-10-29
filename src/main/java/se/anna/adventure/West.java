@@ -8,20 +8,18 @@ public class West implements Directions {
     private final Tasks task;
     private Player player;
     private final FightMechanics fightMechanics;
-    //private boolean haveFought;
 
     public West(Scanner scanner, Tasks task, Player player, FightMechanics fightMechanics) {
         this.scanner = scanner;
         this.task = task;
         this.player = player;
         this.fightMechanics = fightMechanics;
-        //this.haveFought = false;
     }
 
     @Override
     public void surroundings() {
         if (task.isWestCompleted()) {
-            System.out.println("You go to the west. Before you a green lake appears, with a stillness " +
+            System.out.println("\nYou go to the west. Before you a green lake appears, with a stillness " +
                     "reminiscent of a mirror.");
         } else {
             System.out.println("""
@@ -170,6 +168,5 @@ public class West implements Directions {
     @Override
     public void completeTask() {
         task.setWestCompleted(true);
-        //haveFought = true;
     }
 }
