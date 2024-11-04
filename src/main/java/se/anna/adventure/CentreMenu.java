@@ -49,7 +49,7 @@ public class CentreMenu {
                 now glimmers in the sunlight.
                 You let out your own sigh of relief.""");
         while (running) {
-            System.out.println("\nWhat will you do with the medallion?");
+            System.out.println("\nWhat will you do with the medallion?\nThrow it away? Put it on? Or something else?");
             String userInput = scanner.nextLine().toLowerCase().trim();
             switch (userInput) {
                 case "put it on" -> {
