@@ -1,7 +1,7 @@
 package se.anna.adventurefight;
 
 public class Creature {
-    private String name;
+    private final String name;
     private int health;
     protected int damage;
 
@@ -33,10 +33,6 @@ public class Creature {
     }
 
     public boolean isAlive() {
-        if (health > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return health > 0;
     }
 }
